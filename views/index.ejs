@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7gsreef Coral store</title>
-</head>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script></head>
 
 <body>
 <!-- need to write clientside for this file -->
@@ -35,10 +36,29 @@
                 <ul>
                     <%c.qty%>
                 </ul>
+              <button id="buy-button">BUY</button>
+
+<% if (coral.inventory> 0) { %>
+    <button id="buyButton">Buy</button>
+    <% } else { %>
+        <p>Out of stock</p>
+        <% } %>
+
+            <script>
+                const buyButton = document.getElementById('buyButton');
+                let inventory = "<%= coral.qty %>";
+                buyButton.addEventListener('click', () => {
+                    inventory--;
+                    console.log(`Inventory: ${qty}`);
+                });
+            </script>
+
+
                 <form action="/7gsreef/<%=c._id%>?_method=DELETE" method="POST">
                     <!-- overrides post as a delete because we can only send post or get methods  -->
                     <input type="submit" value="DELETE" />
                 </form>
+
                 <!-- <a href="/7gsreef/<c._id /edit">edit</a> -->
             </li>
             <%});%> 

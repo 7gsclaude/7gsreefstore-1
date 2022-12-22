@@ -4,7 +4,11 @@ const ejs = require("ejs");
 const Coral = require("./models/corals"); //i can remove the .js from this file sicnce im turning that file into a schema 
 const port = 3000;
 const methodOverride = require("method-override");
-app.set("view engine", "ejs"); //THIS LETS ME CHOP OFF .EJS from files 
+
+
+app.set("view engine", "ejs"); //THIS LETS ME CHOP OFF .EJS from files
+
+
 //i may need to require mongoose in this file 
 const mongoose = require('mongoose')
 //configs
@@ -32,6 +36,7 @@ app.get("/7gsreef", (req, res) => {
     res.render("index", { coral }); //renders them on this page //just added capitolized coral 
     console.log(err);
   });
+
 });
 // i can begin to remove .ejs on the end of files 
 
@@ -43,10 +48,7 @@ app.get("/7gsreef/new", (req, res) => {
 }); 
 
 //d
-// app.delete("/7gsreef/:indexOfCoral", (req, res) => {
-//   Coral.splice(req.params.indexOfCoral, 1); //removes 1 item from indexOfFruits
-//   res.redirect("/7gsreef");
-// }); 
+
 app.delete("/7gsreef/:id", (req, res) => {
   Coral.findByIdAndDelete(req.params.id, (err) => {
     if (err) {
@@ -93,8 +95,6 @@ app.post("/7gsreef", (req, res) => {
 }); 
 
 //edit 
-
-
 app.get('/7gsreef/:id/edit', (req, res) => {
   Coral.findById(req.params.id, (err, coral) => {
     res.render("edit", {coral});
@@ -102,9 +102,6 @@ app.get('/7gsreef/:id/edit', (req, res) => {
   });
 
 });
- 
-
-
 
 //show 
 app.get("/7gsreef/:id", (req, res) => {

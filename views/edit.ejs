@@ -13,13 +13,14 @@
 
 <body>
     <h1>New edit page</h1>
-     Difficulty: <input type="text" name="difficulty">
-    <form action="/7gsreef/<%=coral._id%>/edit" method="post" >
+
+    <form action="/7gsreef/<%=coral._id%>?_method=PUT" method="post" >
         <!-- the index in this line refers to the index craeted in server.js -->
         species: <input type="text" name="species" value="<%coral.species%>">
         Name: <input type="text" name="name" value="<%coral.name%>" /> <br>
         Difficulty: <input type="text" name="difficulty" value="<%coral.difficulty%>"> <br />
-        Img: <input type="text" name="img">
+        Img: <input type="text" name="img" value="<%coral.img%>">
+        qty: <input type="text" name="qty" value="<%coral.qty%>">
         <input type="submit" value="publish article">
     </form>
 
