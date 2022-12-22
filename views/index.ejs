@@ -37,13 +37,13 @@
                     <%c.qty%>
                 </ul>
               <button id="buy-button">BUY</button>
-
+<!-- if statement says that the button will say buy until it reaches 0 -->
 <% if (coral.inventory> 0) { %>
     <button id="buyButton">Buy</button>
     <% } else { %>
         <p>Out of stock</p>
         <% } %>
-
+<!-- implemented script tag to act as a quick EventListener only for this buy button -->
             <script>
                 const buyButton = document.getElementById('buyButton');
                 let inventory = "<%= coral.qty %>";
