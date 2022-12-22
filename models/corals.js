@@ -30,32 +30,35 @@ const { Decimal128 } = require('bson');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const coralSchema = new Schema( {
+const coralSchema = new Schema(
+  {
     species: {
       type: String,
-    //   required: true,
+      //   required: true,
     },
     name: {
       type: String,
-    //   required: true,
+      //   required: true,
     },
     difficulty: {
       type: String,
-    //   required: true,
-        },
-     price: {
+      //   required: true,
+    },
+    price: {
       type: Decimal128,
-    //   required: true, i need to change this  to a decimal 
-        },
-     qty: {
-            type: Number,
-        },
+      //   required: true, i need to change this  to a decimal128
+    },
+    qty: {
+      type: Decimal128,
+    },
     img: {
-            type: String,
-            required: true
-        },
+      type: String,
+      // required: true, this is only for needing everything validated in order to pass 
+    },
     completed: Boolean,
-  }, { timestamps: true });
+  },
+  { timestamps: true }
+);
 
 
 module.exports = mongoose.model('Coral', coralSchema);

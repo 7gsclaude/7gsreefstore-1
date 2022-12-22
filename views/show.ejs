@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+
+<body>
+    <nav>
+      make welcome page link  
+        <a href="/7gsreef">
+            Product Page</a>
+        <a href="/7gsreef/<%= coral._id %>/edit">edit sale item</a>
+    </nav>
+    <h1>
+     Corals
+    </h1>
+    <main>
+    <p>Species: <%=coral.species%>
+    </p>
+    <p>Name: <%=coral.name%>
+    </p>
+    <p>Difficulty: <%=coral.difficulty%>
+    </p>
+    <p>Price: <%=coral.price%>
+    </p>
+    <p>Quanity: "<%=coral.qty%>"
+    </p>
+     <img src="<%= coral.img %>"><br> 
+
+</main>
+
+</body>
+
+</html>

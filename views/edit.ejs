@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<!-- people usually copy the new into the edit becausee there are only a couplee differrences  -->
+
+<body>
+    <h1>New edit page</h1>
+     Difficulty: <input type="text" name="difficulty">
+    <form action="/7gsreef/<%=coral._id%>/edit" method="post" >
+        <!-- the index in this line refers to the index craeted in server.js -->
+        species: <input type="text" name="species" value="<%coral.species%>">
+        Name: <input type="text" name="name" value="<%coral.name%>" /> <br>
+        Difficulty: <input type="text" name="difficulty" value="<%coral.difficulty%>"> <br />
+        Img: <input type="text" name="img">
+        <input type="submit" value="publish article">
+    </form>
+
+</body>
+
+</html>
